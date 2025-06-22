@@ -19,6 +19,11 @@ public class MascotaController {
     @Autowired
     private MascotaService mascotaService;
 
+    @GetMapping("/mascota")
+    public String mascota() {
+        return "mascota";
+    }
+
     @GetMapping("/v1/api/mascota")
     public ResponseEntity<Map<String,Object>> getAllMascotas() {
         List<MascotaModel> mascotas=mascotaService.findAllMascotas();
